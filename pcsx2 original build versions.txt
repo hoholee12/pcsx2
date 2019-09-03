@@ -1,0 +1,4 @@
+based on...
+
+pcsx2_old = 1.2.1 release
+pcsx2 = 7b1214849acba37fd66693359d1e3fced001ed78 build tree from unknownbrackets (cso, gzip support!!)

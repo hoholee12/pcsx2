@@ -1,0 +1,3 @@
+v1.5.0-dev-2291-gc1fd01545
+
+gsdx becomes slower some versions after this

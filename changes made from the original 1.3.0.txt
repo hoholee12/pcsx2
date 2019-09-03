@@ -1,0 +1,97 @@
+mainframe.cpp - in MainEmuFrame
+
+wintitle.Printf( _("%s  %d.%d.%d BGI Version"), pxGetAppName().c_str(), PCSX2_VersionHi, PCSX2_VersionMid, PCSX2_VersionLo );
+
+wintitle.Printf( _("%s  %d.%d.%d.%d%s (svn)  %s - BGI Version"), pxGetAppName().c_str(), PCSX2_VersionHi, PCSX2_VersionMid, PCSX2_VersionLo,
+			SVN_REV, SVN_MODS ? L"m" : wxEmptyString, fromUTF8(__DATE__).c_str() );
+
+
+
+sysforwarddefs.h - in version
+
+static const int PCSX2_VersionHi	= 1;
+static const int PCSX2_VersionMid	= 3;
+static const int PCSX2_VersionLo	= 2;
+static const bool PCSX2_isReleaseVersion = 1;
+
+
+
+appcorethread.cpp - in func loadGameSettings
+
+	//some games like iidx has inputlag with vsync
+	if (game.keyExists("VsyncEnable")) {
+		bool VsyncEnable = game.getBool("VsyncEnable");
+		PatchesCon->WriteLn("(GameDB) VsyncEnable = %d", VsyncEnable);
+		dest.GS.VsyncEnable = VsyncEnable;
+		++gf;
+	}
+	//ntsc
+	if (game.keyExists("FramerateNTSC")){
+		Fixed100 FramerateNTSC = game.getF100("FramerateNTSC");
+		PatchesCon->WriteLn("(GameDB) FramerateNTSC = %d", FramerateNTSC);
+		dest.GS.FramerateNTSC = FramerateNTSC;
+		++gf;
+	}
+	//pal
+	if (game.keyExists("FrameratePAL")){
+		Fixed100 FrameratePAL = game.getF100("FrameratePAL");
+		PatchesCon->WriteLn("(GameDB) FrameratePAL = %d", FrameratePAL);
+		dest.GS.FrameratePAL = FrameratePAL;
+		++gf;
+	}
+
+	//use this to disable speedhacks
+
+	//default baked in speedhacks
+	dest.Speedhacks.vuFlagHack = 1;
+	dest.Speedhacks.IntcStat = 1;
+	dest.Speedhacks.WaitLoop = 1;
+	dest.Speedhacks.vuThread = 1;
+	dest.Speedhacks.fastCDVD = 1;
+	dest.Speedhacks.VUCycleSteal = 1;
+	
+
+	if (game.keyExists("EECycleRate")){
+		u8 EECycleRate = game.getU8("EECycleRate");
+		PatchesCon->WriteLn("(GameDB) EECycleRate = %d", EECycleRate);
+		dest.Speedhacks.EECycleRate = EECycleRate;
+		++gf;
+	}
+
+	if (game.keyExists("VUCycleSteal")){
+		u8 VUCycleSteal = game.getU8("VUCycleSteal");
+		PatchesCon->WriteLn("(GameDB) VUCycleSteal = %d", VUCycleSteal);
+		dest.Speedhacks.VUCycleSteal = VUCycleSteal;
+		++gf;
+	}
+	
+	if (game.keyExists("vuThread")) {
+		bool vuThread = game.getBool("vuThread");
+		PatchesCon->WriteLn("(GameDB) vuThread = %d", vuThread);
+		dest.Speedhacks.vuThread = vuThread;
+		++gf;
+	}
+	
+	if (game.keyExists("fastCDVD")){
+		bool fastCDVD = game.getBool("fastCDVD");
+		PatchesCon->WriteLn("(GameDB) fastCDVD = %d", fastCDVD);
+		dest.Speedhacks.fastCDVD = fastCDVD;
+		++gf;
+	}
+	
+gamedatabase.h - in struct Game_Data
+
+	//mod
+	Fixed100 getF100(const wxChar* key) const{
+		return (Fixed100)wxAtof(getString(key));
+	}
+	
+	//mod
+	Fixed100 getF100(const char* key) const{
+		return getF100(fromUTF8(key));
+	}
+	
+	
+
+
+CDVD folder copypasted from 1.4.0 stable

@@ -1,0 +1,1 @@
+dc64 -width=1280 -height=720 pcsx2

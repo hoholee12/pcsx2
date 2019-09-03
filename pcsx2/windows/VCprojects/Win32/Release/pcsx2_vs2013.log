@@ -1,0 +1,260 @@
+﻿빌드 시작: 2019-09-02 오전 12:28:29
+     1>2 노드의 "C:\Users\hoholee12\Documents\Visual Studio 2013\Projects\pcsx2\pcsx2\windows\VCprojects\pcsx2_vs2013.vcxproj" 프로젝트(Build 대상)입니다.
+     1>PreBuildEvent:
+         "C:\Users\hoholee12\Documents\Visual Studio 2013\Projects\pcsx2\pcsx2\windows\VCprojects\\..\..\..\common\vsprops\preBuild.cmd" "C:\Users\hoholee12\Documents\Visual Studio 2013\Projects\pcsx2\pcsx2\windows\VCprojects\\..\.."
+         :VCEnd
+         'git'은(는) 내부 또는 외부 명령, 실행할 수 있는 프로그램, 또는
+         배치 파일이 아닙니다.
+         'git'은(는) 내부 또는 외부 명령, 실행할 수 있는 프로그램, 또는
+         배치 파일이 아닙니다.
+         Automatic version detection unavailable.
+         If you want to have the version string print correctly,
+         make sure your Git.exe is in the default installation directory,
+         or in your PATH.
+         You can safely ignore this message - a dummy string will be printed.
+                 1개 파일이 복사되었습니다.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\hoholee12\Documents\Visual Studio 2013\Projects\pcsx2\pcsx2\windows\VCprojects\\..\../gui" /I"C:\Users\hoholee12\Documents\Visual Studio 2013\Projects\pcsx2\pcsx2\windows\VCprojects\\..\..\..\3rdparty\w32pthreads\include" /I"C:\Users\hoholee12\Documents\Visual Studio 2013\Projects\pcsx2\pcsx2\windows\VCprojects\\..\..\..\3rdparty\w32pthreads\include" /I"C:\Users\hoholee12\Documents\Visual Studio 2013\Projects\pcsx2\pcsx2\windows\VCprojects\\..\..\..\3rdparty\\" /I"C:\Users\hoholee12\Documents\Visual Studio 2013\Projects\pcsx2\pcsx2\windows\VCprojects\\..\..\..\common\include" /I"C:\Users\hoholee12\Documents\Visual Studio 2013\Projects\pcsx2\pcsx2\windows\VCprojects\\..\..\..\3rdparty\wxWidgets\include" /I./ /I../../ /I../../x86 /I"../../x86/ix86-32" /I../../IPU /I../../System /Zi /nologo /W3 /WX- /MP /O2 /Ob2 /Oi /Ot /Oy /GT /GL /D NDEBUG /D wxUSE_UNICODE=1 /D NDEBUG /D _SECURE_SCL_=0 /D WIN32_PTHREADS /D __CLEANUP_SEH /D __WIN32__ /D WIN32 /D _WINDOWS /D _CRT_SECURE_NO_WARNINGS /D _CRT_SECURE_NO_DEPRECATE /D _ARCH_32=1 /D _M_X86_32 /D _M_X86 /D __i386__ /D TIXML_USE_STL /D _SCL_SECURE_NO_WARNINGS /D _USING_V110_SDK71_ /D _UNICODE /D UNICODE /GF /Gm- /EHa /MD /Zp16 /GS- /Gy- /arch:IA32 /fp:precise /Zc:wchar_t /Zc:forScope /GR- /Yu"PrecompiledHeader.h" /Fp"Win32\Release\pcsx2.pch" /Fo"Win32\Release\\" /Fd"Win32\Release\vc120.pdb" /Gd /TP /wd4063 /wd4100 /analyze- /errorReport:prompt ..\..\PluginManager.cpp ..\..\System.cpp ..\..\gui\AppCoreThread.cpp ..\..\gui\MainFrame.cpp ..\..\gui\MemoryCardFile.cpp
+         PluginManager.cpp
+         System.cpp
+         AppCoreThread.cpp
+         MainFrame.cpp
+         MemoryCardFile.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\hoholee12\Documents\Visual Studio 2013\Projects\pcsx2\bin\\pcsx2.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\Users\hoholee12\Documents\Visual Studio 2013\Projects\pcsx2\pcsx2\windows\VCprojects\\..\..\..\deps\Win32\Release" /LIBPATH:"C:\Users\hoholee12\Documents\Visual Studio 2013\Projects\pcsx2\pcsx2\windows\VCprojects\\..\..\..\deps\Win32\Release" /LIBPATH:..\ /LIBPATH:..\libs zlib.lib wxAdv28.lib wxBase28.lib wxCore28.lib zlib.lib libjpeg7.lib w32pthreads_lib.lib odbc32.lib odbccp32.lib comctl32.lib ws2_32.lib shlwapi.lib winmm.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\hoholee12\Documents\Visual Studio 2013\Projects\pcsx2\bin\pcsx2.pdb" /SUBSYSTEM:WINDOWS,"5.01" /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\hoholee12\Documents\Visual Studio 2013\Projects\pcsx2\bin\\pcsx2.lib" /MACHINE:X86 /SAFESEH Win32\Release\wx.res
+         Win32\Release\wxResources.res
+         Win32\Release\BlockdumpFileReader.obj
+         Win32\Release\ChunksCache.obj
+         Win32\Release\CompressedFileReader.obj
+         Win32\Release\CsoFileReader.obj
+         Win32\Release\GzippedFileReader.obj
+         Win32\Release\OutputIsoFile.obj
+         Win32\Release\Breakpoints.obj
+         Win32\Release\DebugInterface.obj
+         Win32\Release\DisassemblyManager.obj
+         Win32\Release\BiosDebugData.obj
+         Win32\Release\ExpressionParser.obj
+         Win32\Release\MIPSAnalyst.obj
+         Win32\Release\MipsAssembler.obj
+         Win32\Release\MipsAssemblerTables.obj
+         Win32\Release\MipsStackWalk.obj
+         Win32\Release\SymbolMap.obj
+         Win32\Release\GameDatabase.obj
+         Win32\Release\Gif_Logger.obj
+         Win32\Release\Gif_Unit.obj
+         Win32\Release\AppGameDatabase.obj
+         Win32\Release\AppUserMode.obj
+         Win32\Release\BreakpointWindow.obj
+         Win32\Release\CtrlDisassemblyView.obj
+         Win32\Release\CtrlMemView.obj
+         Win32\Release\CtrlRegisterList.obj
+         Win32\Release\DebugEvents.obj
+         Win32\Release\DebuggerLists.obj
+         Win32\Release\DisassemblyDialog.obj
+         Win32\Release\GameDatabaseDialog.obj
+         Win32\Release\McdConfigDialog.obj
+         Win32\Release\GameDatabasePanel.obj
+         Win32\Release\MemoryCardListView.obj
+         Win32\Release\IPUdma.obj
+         Win32\Release\MultipartFileReader.obj
+         Win32\Release\Patch.obj
+         Win32\Release\Patch_Memory.obj
+         Win32\Release\PrecompiledHeader.obj
+         Win32\Release\LegacyDmac.obj
+         Win32\Release\ShiftJisToUnicode.obj
+         Win32\Release\sif2.obj
+         Win32\Release\FileUtils.obj
+         Win32\Release\Dump.obj
+         Win32\Release\iMisc.obj
+         Win32\Release\Pcsx2Config.obj
+         Win32\Release\PluginManager.obj
+         Win32\Release\FlatFileReaderWindows.obj
+         Win32\Release\SamplProf.obj
+         Win32\Release\SaveState.obj
+         Win32\Release\SourceLog.obj
+         Win32\Release\SysCoreThread.obj
+         Win32\Release\System.obj
+         Win32\Release\SysThreadBase.obj
+         Win32\Release\Elfheader.obj
+         Win32\Release\InputIsoFile.obj
+         Win32\Release\BaseblockEx.obj
+         Win32\Release\BiosTools.obj
+         Win32\Release\Counters.obj
+         Win32\Release\FiFo.obj
+         Win32\Release\Hw.obj
+         Win32\Release\HwRead.obj
+         Win32\Release\HwWrite.obj
+         Win32\Release\Cache.obj
+         Win32\Release\Memory.obj
+         Win32\Release\recVTLB.obj
+         Win32\Release\vtlb.obj
+         Win32\Release\MTVU.obj
+         Win32\Release\VUmicro.obj
+         Win32\Release\VUmicroMem.obj
+         Win32\Release\iVU1micro.obj
+         Win32\Release\microVU.obj
+         Win32\Release\sVU_Lower.obj
+         Win32\Release\sVU_Micro.obj
+         Win32\Release\sVU_Upper.obj
+         Win32\Release\sVU_zerorec.obj
+         Win32\Release\VU0.obj
+         Win32\Release\VU0micro.obj
+         Win32\Release\VU0microInterp.obj
+         Win32\Release\VU1micro.obj
+         Win32\Release\VU1microInterp.obj
+         Win32\Release\VUflags.obj
+         Win32\Release\VUops.obj
+         Win32\Release\Sif.obj
+         Win32\Release\Sif0.obj
+         Win32\Release\Sif1.obj
+         Win32\Release\Vif.obj
+         Win32\Release\Vif0_Dma.obj
+         Win32\Release\Vif1_Dma.obj
+         Win32\Release\Vif1_MFIFO.obj
+         Win32\Release\Vif_Codes.obj
+         Win32\Release\Vif_Transfer.obj
+         Win32\Release\Vif_Unpack.obj
+         Win32\Release\newVif_Unpack.obj
+         Win32\Release\newVif_Dynarec.obj
+         Win32\Release\newVif_UnpackSSE.obj
+         Win32\Release\SPR.obj
+         Win32\Release\Gif.obj
+         Win32\Release\R5900OpcodeTables.obj
+         Win32\Release\iCOP0.obj
+         Win32\Release\iFPU.obj
+         Win32\Release\iFPUd.obj
+         Win32\Release\iMMI.obj
+         Win32\Release\iR5900Misc.obj
+         Win32\Release\ir5900tables.obj
+         "Win32\Release\iR5900-32.obj"
+         Win32\Release\iR5900Arit.obj
+         Win32\Release\iR5900AritImm.obj
+         Win32\Release\iR5900Branch.obj
+         Win32\Release\iR5900Jump.obj
+         Win32\Release\iR5900LoadStore.obj
+         Win32\Release\iR5900Move.obj
+         Win32\Release\iR5900MultDiv.obj
+         Win32\Release\iR5900Shift.obj
+         Win32\Release\iR5900Templates.obj
+         Win32\Release\COP0.obj
+         Win32\Release\COP2.obj
+         Win32\Release\FPU.obj
+         Win32\Release\Interpreter.obj
+         Win32\Release\MMI.obj
+         Win32\Release\R5900.obj
+         Win32\Release\R5900OpcodeImpl.obj
+         Win32\Release\IopBios.obj
+         Win32\Release\IopCounters.obj
+         Win32\Release\IopDma.obj
+         Win32\Release\IopIrq.obj
+         Win32\Release\IopMem.obj
+         Win32\Release\IopSif.obj
+         Win32\Release\IopSio2.obj
+         Win32\Release\R3000A.obj
+         Win32\Release\R3000AInterpreter.obj
+         Win32\Release\R3000AOpcodeTables.obj
+         Win32\Release\Sio.obj
+         Win32\Release\iR3000A.obj
+         Win32\Release\iR3000Atables.obj
+         Win32\Release\IopHw.obj
+         Win32\Release\IopHwRead.obj
+         Win32\Release\IopHwWrite.obj
+         Win32\Release\CdRom.obj
+         Win32\Release\CDVD.obj
+         Win32\Release\CDVDaccess.obj
+         Win32\Release\CDVDisoReader.obj
+         Win32\Release\IPU.obj
+         Win32\Release\IPU_Fifo.obj
+         Win32\Release\yuv2rgb.obj
+         Win32\Release\Idct.obj
+         Win32\Release\Mpeg.obj
+         Win32\Release\GS.obj
+         Win32\Release\GSState.obj
+         Win32\Release\MTGS.obj
+         Win32\Release\DisR3000A.obj
+         Win32\Release\DisR5900asm.obj
+         Win32\Release\DisVU0Micro.obj
+         Win32\Release\DisVU1Micro.obj
+         "Win32\Release\iCore-32.obj"
+         Win32\Release\iCore.obj
+         Win32\Release\WinSysExec.obj
+         Win32\Release\IsoFile.obj
+         Win32\Release\IsoFS.obj
+         Win32\Release\IsoFSCDVD.obj
+         Win32\Release\AppAssert.obj
+         Win32\Release\AppConfig.obj
+         Win32\Release\AppCorePlugins.obj
+         Win32\Release\AppCoreThread.obj
+         Win32\Release\AppEventSources.obj
+         Win32\Release\AppInit.obj
+         Win32\Release\AppMain.obj
+         Win32\Release\AppRes.obj
+         Win32\Release\ConsoleLogger.obj
+         Win32\Release\CpuUsageProvider.obj
+         Win32\Release\CpuUsageProviderMSW.obj
+         Win32\Release\ExecutorThread.obj
+         Win32\Release\FrameForGS.obj
+         Win32\Release\GlobalCommands.obj
+         Win32\Release\i18n.obj
+         Win32\Release\IsoDropTarget.obj
+         Win32\Release\MainFrame.obj
+         Win32\Release\MainMenuClicks.obj
+         Win32\Release\MemoryCardFile.obj
+         Win32\Release\MessageBoxes.obj
+         Win32\Release\MSWstuff.obj
+         Win32\Release\pxLogTextCtrl.obj
+         Win32\Release\RecentIsoList.obj
+         Win32\Release\UpdateUI.obj
+         Win32\Release\AboutBoxDialog.obj
+         Win32\Release\AssertionDialog.obj
+         Win32\Release\BaseConfigurationDialog.obj
+         Win32\Release\BiosSelectorDialog.obj
+         Win32\Release\ConfirmationDialogs.obj
+         Win32\Release\CreateMemoryCardDialog.obj
+         Win32\Release\FirstTimeWizard.obj
+         Win32\Release\ImportSettingsDialog.obj
+         Win32\Release\LogOptionsDialog.obj
+         Win32\Release\PickUserModeDialog.obj
+         Win32\Release\StuckThreadDialog.obj
+         Win32\Release\SysConfigDialog.obj
+         Win32\Release\AudioPanel.obj
+         Win32\Release\BaseApplicableConfigPanel.obj
+         Win32\Release\BiosSelectorPanel.obj
+         Win32\Release\CpuPanel.obj
+         Win32\Release\DirPickerPanel.obj
+         Win32\Release\GameFixesPanel.obj
+         Win32\Release\GSWindowPanel.obj
+         Win32\Release\LogOptionsPanels.obj
+         Win32\Release\MemoryCardListPanel.obj
+         Win32\Release\MiscPanelStuff.obj
+         Win32\Release\PathsPanel.obj
+         Win32\Release\PluginSelectorPanel.obj
+         Win32\Release\SpeedhacksPanel.obj
+         Win32\Release\VideoPanel.obj
+         Win32\Release\DwmSetup.obj
+         Win32\Release\WinCompressNTFS.obj
+         Win32\Release\WinConsolePipe.obj
+         Win32\Release\Saveslots.obj
+         Win32\Release\SysState.obj
+         Win32\Release\thread_gzip.obj
+         Win32\Release\thread_lzma.obj
+         "C:\Users\hoholee12\Documents\Visual Studio 2013\Projects\pcsx2\bin\w32pthreads.v4.lib"
+         "C:\Users\hoholee12\Documents\Visual Studio 2013\Projects\pcsx2\deps\Win32\Release\w32pthreads_lib.lib"
+         "C:\Users\hoholee12\Documents\Visual Studio 2013\Projects\pcsx2\deps\Win32\Release\wxAdv28.lib"
+         "C:\Users\hoholee12\Documents\Visual Studio 2013\Projects\pcsx2\deps\Win32\Release\wxBase28.lib"
+         "C:\Users\hoholee12\Documents\Visual Studio 2013\Projects\pcsx2\deps\Win32\Release\libjpeg7.lib"
+         "C:\Users\hoholee12\Documents\Visual Studio 2013\Projects\pcsx2\deps\Win32\Release\wxCore28.lib"
+         "C:\Users\hoholee12\Documents\Visual Studio 2013\Projects\pcsx2\deps\Win32\Release\zlib.lib"
+         "C:\Users\hoholee12\Documents\Visual Studio 2013\Projects\pcsx2\deps\Win32\Release\utilities.lib"
+         "C:\Users\hoholee12\Documents\Visual Studio 2013\Projects\pcsx2\deps\Win32\Release\x86emitter.lib"
+         코드를 생성하고 있습니다.
+         코드를 생성했습니다.
+         pcsx2_vs2013.vcxproj -> C:\Users\hoholee12\Documents\Visual Studio 2013\Projects\pcsx2\bin\\pcsx2.exe
+       PostBuildEvent:
+         .\postBuild.cmd "C:\Users\hoholee12\Documents\Visual Studio 2013\Projects\pcsx2\bin\\pcsx2.exe" "pcsx2" .exe 
+         :VCEnd
+     1>"C:\Users\hoholee12\Documents\Visual Studio 2013\Projects\pcsx2\pcsx2\windows\VCprojects\pcsx2_vs2013.vcxproj" 프로젝트를 빌드했습니다(Build 대상).
+
+빌드했습니다.
+
+경과 시간: 00:02:03.36

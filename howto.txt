@@ -1,0 +1,7 @@
+1. replace your pcsx2.exe with this pcsx2.exe
+2. replace your gameindex.dbf with this gameindex.dbf
+3. copy pcsx2iidxtuner.exe to your pcsx2 directory(inis folder must be in the same directory)
+4. download all those .bat files. they correspond to each option in pcsx2iidxtuner.exe. you click them BEFORE you start up pcsx2
+
+pcsx2iidxtuner.exe is a plugin settings changer.
+since pcsx2 bgi version cant auto change plugin settings, use this.
