@@ -26,7 +26,7 @@ DefaultValue = false
 [OptionBool]
 GUIName = Scaling Filters
 OptionName = A_SCALERS
-DefaultValue = false
+DefaultValue = true
 
 [OptionRangeInteger]
 GUIName = Bilinear Filtering
@@ -96,7 +96,7 @@ DependentOption = A_FXAA_PASS
 [OptionBool]
 GUIName = Blended Bloom
 OptionName = B_BLOOM_PASS
-DefaultValue = false
+DefaultValue = true
 
 [OptionRangeInteger]
 GUIName = BloomType
@@ -190,7 +190,7 @@ OptionName = A_TONEMAP_FILM
 MinValue = 0
 MaxValue = 1
 StepAmount = 1
-DefaultValue = 0
+DefaultValue = 1
 DependentOption = C_TONEMAP_PASS
 
 [OptionRangeFloat]
@@ -250,7 +250,7 @@ DependentOption = C_TONEMAP_PASS
 [OptionBool]
 GUIName = Colour Correction
 OptionName = D_COLOR_CORRECTION
-DefaultValue = false
+DefaultValue = true
 
 [OptionRangeInteger]
 GUIName = CorrectionPalette
@@ -381,7 +381,7 @@ OptionName = B_SHARPEN_CLAMP
 MinValue = 0.005
 MaxValue = 0.250
 StepAmount = 0.001
-DefaultValue = 0.012
+DefaultValue = 0.015
 DependentOption = G_TEXTURE_SHARPEN
 
 [OptionRangeFloat]
@@ -390,7 +390,7 @@ OptionName = C_SHARPEN_BIAS
 MinValue = 1.00
 MaxValue = 4.00
 StepAmount = 0.05
-DefaultValue = 1.00
+DefaultValue = 1.20
 DependentOption = G_TEXTURE_SHARPEN
 
 [OptionRangeInteger]
