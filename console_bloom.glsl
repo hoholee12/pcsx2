@@ -19,5 +19,5 @@ void main()
 	bloom_sum -= float4(0.3, 0.3, 0.3, 0.3);
 	bloom_sum = max(bloom_sum, float4(0.0, 0.0, 0.0, 0.0));
 
-	SetOutput(c_center * 0.9 + bloom_sum);
+	SetOutput(c_center * 0.75 + bloom_sum);
 }
