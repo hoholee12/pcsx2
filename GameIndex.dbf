@@ -8615,6 +8615,7 @@ Region = PAL-I
 Serial = SLES-50876
 Name   = Driv3r
 Region = PAL-M5
+VUCycleSteal = 3
 ---------------------------------------------
 Serial = SLES-50877
 Name   = TimeSplitters 2
@@ -11369,6 +11370,7 @@ Region = PAL-E
 Serial = SLES-52153
 Name   = Driver 3
 Region = PAL-E-S
+VUCycleSteal = 3
 ---------------------------------------------
 Serial = SLES-52159
 Name   = Myth Makers Super Kart GP
@@ -24182,6 +24184,7 @@ Region = NTSC-J
 Serial = SLPM-65741
 Name   = Driver 3
 Region = NTSC-J
+VUCycleSteal = 3
 ---------------------------------------------
 Serial = SLPM-65742
 Name   = Cool Girl [Konami the Best]
@@ -36864,6 +36867,7 @@ Serial = SLUS-20587
 Name   = Driver 3
 Region = NTSC-U
 Compat = 5
+VUCycleSteal = 3
 ---------------------------------------------
 Serial = SLUS-20588
 Name   = Activision Anthology
