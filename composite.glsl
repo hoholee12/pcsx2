@@ -34,65 +34,9 @@ float smootherstep(float a, float b, float x)
 
 
 /*------------------------------------------------------------------------------
-                        [BICUBIC SCALER CODE SECTION]
-------------------------------------------------------------------------------*/
-
-float4 BicubicScaler(float2 uv, float2 txSize)
-{
-    float2 inputSize = float2(1.0/txSize.x, 1.0/txSize.y);
-
-    float2 coord_hg = uv * txSize - 0.5;
-    float2 index = floor(coord_hg);
-    float2 f = coord_hg - index;
-
-    mat4 M = mat4( -1.0, 3.0,-3.0, 1.0, 3.0,-6.0, 3.0, 0.0,
-                   -3.0, 0.0, 3.0, 0.0, 1.0, 4.0, 1.0, 0.0 );
-    M /= 6.0;
-
-    float4 wx = M * float4(f.x*f.x*f.x, f.x*f.x, f.x, 1.0);
-    float4 wy = M * float4(f.y*f.y*f.y, f.y*f.y, f.y, 1.0);
-    float2 w0 = float2(wx.x, wy.x);
-    float2 w1 = float2(wx.y, wy.y);
-    float2 w2 = float2(wx.z, wy.z);
-    float2 w3 = float2(wx.w, wy.w);
-
-    float2 g0 = w0 + w1;
-    float2 g1 = w2 + w3;
-    float2 h0 = w1 / g0 - 1.0;
-    float2 h1 = w3 / g1 + 1.0;
-
-    float2 coord00 = index + h0;
-    float2 coord10 = index + float2(h1.x, h0.y);
-    float2 coord01 = index + float2(h0.x, h1.y);
-    float2 coord11 = index + h1;
-
-    coord00 = (coord00 + 0.5) * inputSize;
-    coord10 = (coord10 + 0.5) * inputSize;
-    coord01 = (coord01 + 0.5) * inputSize;
-    coord11 = (coord11 + 0.5) * inputSize;
-
-    float4 tex00 = SampleLocationLod(coord00, 0.0);
-    float4 tex10 = SampleLocationLod(coord10, 0.0);
-    float4 tex01 = SampleLocationLod(coord01, 0.0);
-    float4 tex11 = SampleLocationLod(coord11, 0.0);
-
-    tex00 = lerp(tex01, tex00, float4(g0.y, g0.y, g0.y, g0.y));
-    tex10 = lerp(tex11, tex10, float4(g0.y, g0.y, g0.y, g0.y));
-
-    float4 res = lerp(tex10, tex00, float4(g0.x, g0.x, g0.x, g0.x));
-
-    return res;
-}
-
-float4 BicubicScalerPass(float4 color)
-{
-    color = BicubicScaler(texcoord, screenSize);
-    return color;
-}
-
-/*------------------------------------------------------------------------------
                          [LANCZOS SCALER CODE SECTION]
 ------------------------------------------------------------------------------*/
+
 
 float3 PixelPos(float xpos, float ypos)
 {
@@ -185,33 +129,6 @@ float4 BilinearPass(float4 color)
 }
 
 
-/*------------------------------------------------------------------------------
-                       [PIXEL VIBRANCE CODE SECTION]
-------------------------------------------------------------------------------*/
-
-float A_VIBRANCE = 0.15;
-float B_R_VIBRANCE = 1.00;
-float C_G_VIBRANCE = 1.00;
-float D_B_VIBRANCE = 1.00;
-
-float4 VibrancePass(float4 color)
-{
-    float vib = A_VIBRANCE;
-    float luma = AvgLuminance(color.rgb);
-
-    float colorMax = max(color.r, max(color.g, color.b));
-    float colorMin = min(color.r, min(color.g, color.b));
-
-    float colorSaturation = colorMax - colorMin;
-    float3 colorCoeff = float3(B_R_VIBRANCE*
-    vib, C_G_VIBRANCE * vib, D_B_VIBRANCE * vib);
-
-    color.rgb = lerp(float3(luma), color.rgb, (1.0 + (colorCoeff * (1.0 - (sign(colorCoeff) * colorSaturation)))));
-    color.a = AvgLuminance(color.rgb);
-
-    return saturate(color); //Debug: return colorSaturation.xxxx;
-}
-
 
 /*------------------------------------------------------------------------------
                        [TEXTURE SHARPEN CODE SECTION]
@@ -286,19 +203,81 @@ float4 TexSharpenPass(float4 color)
     return color;
 }
 
+
+/*------------------------------------------------------------------------------
+                       [PIXEL VIBRANCE CODE SECTION]
+------------------------------------------------------------------------------*/
+
+
+float A_VIBRANCE = 0.15;
+float B_R_VIBRANCE = 1.00;
+float C_G_VIBRANCE = 1.00;
+float D_B_VIBRANCE = 1.00;
+
+float4 VibrancePass(float4 color)
+{
+    float vib = A_VIBRANCE;
+    float luma = AvgLuminance(color.rgb);
+
+    float colorMax = max(color.r, max(color.g, color.b));
+    float colorMin = min(color.r, min(color.g, color.b));
+
+    float colorSaturation = colorMax - colorMin;
+    float3 colorCoeff = float3(B_R_VIBRANCE*
+    vib, C_G_VIBRANCE * vib, D_B_VIBRANCE * vib);
+
+    color.rgb = lerp(float3(luma), color.rgb, (1.0 + (colorCoeff * (1.0 - (sign(colorCoeff) * colorSaturation)))));
+    color.a = AvgLuminance(color.rgb);
+
+    return saturate(color); //Debug: return colorSaturation.xxxx;
+}
+
+
+
 /*------------------------------------------------------------------------------
                      [MAIN() & COMBINE PASS CODE SECTION]
 ------------------------------------------------------------------------------*/
 
+
+//this is console bloom
+float4 console_bloom(float4 color){
+	float4 bloom_sum = float4(0.0, 0.0, 0.0, 0.0);
+	float2 pos = GetCoordinates() + float2(0.3, 0.3) * GetInvResolution();
+
+	float2 radius2 = 1 * GetInvResolution();
+	bloom_sum += SampleLocation(pos + float2(-1.5, -1.5) * radius2);
+	bloom_sum += SampleLocation(pos + float2(-2.5, 0.0)  * radius2);
+	bloom_sum += SampleLocation(pos + float2(-1.5, 1.5)  * radius2);
+	bloom_sum += SampleLocation(pos + float2(0.0, 2.5)  * radius2);
+	bloom_sum += SampleLocation(pos + float2(1.5, 1.5)  * radius2);
+	bloom_sum += SampleLocation(pos + float2(2.5, 0.0)  * radius2);
+	bloom_sum += SampleLocation(pos + float2(1.5, -1.5)  * radius2);
+	bloom_sum += SampleLocation(pos + float2(0.0, -2.5)  * radius2);
+
+	bloom_sum *= 0.1;
+	bloom_sum -= float4(0.3, 0.3, 0.3, 0.3);
+	bloom_sum = max(bloom_sum, float4(0.0, 0.0, 0.0, 0.0));
+
+	return color * 0.75 + bloom_sum;
+
+}
+
+
 void main()
 {
-    float4 color = Sample();
+    
+	float4 color = Sample();
 
+	
 	color = LanczosScalerPass(color);
-	//color = BicubicScalerPass(color);
 	color = BilinearPass(color);
 	color = TexSharpenPass(color);
 	color = VibrancePass(color);
+	//color = console_bloom(color);
+	
+	SetOutput(color);
+	
+	
 
-    SetOutput(color);
+	
 }
